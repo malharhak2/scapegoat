@@ -1,0 +1,39 @@
+body
+{
+	background-color: gray;
+}
+
+#canvas 
+{
+background-color: white;
+box-shadow: 2px 2px 33px #424040;
+position: relative;
+margin-left: -400px;
+left: 50%
+}
+
+header > h1
+{
+	font-size: 40pt;
+	font-family: "Tahoma";
+	text-align: center;
+}
+
+footer
+{
+	position: relative;
+	width: 800px;
+	text-align: center;
+	background-color: #313131;
+	color: white;
+	margin-left : -400px;
+	left: 50%
+}
+
+footer > a {
+	color : yellow;
+}
+
+footer > a:visited {
+	color: orange;
+}

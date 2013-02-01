@@ -1,0 +1,49 @@
+<!Doctype HTML>
+<html>
+	<head>
+		<title> </title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<header> 
+			<h1 id="gameTitle">	</h1>
+		</header>
+		<p>Score : <span id="score"></span></p>
+		<div id="gameDiv"> <!-- La div qui va contenir le jeu -->
+			
+		</div>
+		<footer id = "footer"> A game realised with the help of the Lajili Engine. See <a href="http://lajili.com"> http://lajili.com </a>. </footer>
+		<script type="text/javascript" src="LajiliEngine/require.js"></script>
+		<script type="text/javascript">
+			require(["Game/config"], function(config){
+				document.title = config.gameTitle;
+				document.getElementById("gameTitle").innerHTML = config.gameTitle;
+				document.getElementById("gameDiv").id = config.divName;
+				document.body.style.backgroundColor = config.backgroundColor;
+				var custom = "";
+				if (config.showCustomFooter)
+				{
+					custom = config.customFooter;
+				}
+
+				if (config.showCredit)
+				{
+					var span = document.createElement("span");
+					span.innerHTML = custom + "</br>";
+					document.getElementById("footer").insertBefore(span,document.getElementById("footer").firstChild);
+				}
+				else
+				{
+					document.getElementById("footer").innerHTML = custom;
+				}
+				document.getElementById("footer").style.width = config.width + "px";
+				document.getElementById("footer").style.marginLeft = -config.width/2 + "px";
+			})
+			require(["main"], function(main) // pour appeler le jeu.
+			{
+
+			})
+			
+		</script>
+	</body>
+</html>
